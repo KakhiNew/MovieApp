@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary font-['Inter'] text-text min-h-screen;
+  }
+}
+
+@layer components {
+  .search-input {
+    @apply w-full md:w-[400px] px-4 py-3 rounded-lg bg-white/10 border border-white/20 
+           text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-accent/50
+           transition-all duration-300;
+  }
+  
+  .movie-card {
+    @apply bg-secondary rounded-xl overflow-hidden shadow-lg hover:shadow-accent/20 
+           transition-all duration-300 cursor-pointer;
+  }
+
+  .movie-info-card {
+    @apply bg-secondary/50 backdrop-blur-lg rounded-xl p-6 shadow-xl;
+  }
+
+  .favorite-btn {
+    @apply absolute top-2 right-2 w-8 h-8 flex items-center justify-center 
+           bg-black/50 rounded-full text-white hover:bg-accent transition-colors duration-200;
+  }
+
+  .slider-container {
+    @apply relative overflow-hidden;
+  }
+
+  .slider-wrapper {
+    @apply flex transition-transform duration-500 ease-out;
+  }
+
+  .slider-card {
+    @apply flex-none w-[280px] mx-2 bg-secondary rounded-xl overflow-hidden shadow-lg;
+  }
+
+  .slider-nav-btn {
+    @apply absolute top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center
+           bg-black/50 text-white rounded-full hover:bg-accent transition-colors duration-200;
+  }
+}
+
+.hide-search-list {
+  @apply hidden;
+}
+
+.search-list::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.search-list::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+.search-list::-webkit-scrollbar-thumb {
+  @apply bg-accent rounded-full;
+}

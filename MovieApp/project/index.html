@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieCorn - Modern Movie Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-primary">
+    <div class="min-h-screen">
+        <nav class="bg-secondary py-4">
+            <div class="container mx-auto px-4">
+                <h1 class="text-2xl md:text-3xl font-bold">
+                    Movie<span class="text-accent">Corn.</span>
+                </h1>
+            </div>
+        </nav>
+
+        <div class="container mx-auto px-4 py-8">
+            <!-- Upcoming Movies Slider -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Upcoming Movies</h2>
+                <div class="slider-container">
+                    <button id="slider-prev" class="slider-nav-btn left-2">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div id="upcoming-movies" class="overflow-hidden"></div>
+                    <button id="slider-next" class="slider-nav-btn right-2">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <div class="max-w-2xl mx-auto">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-2xl md:text-3xl font-semibold">Search Movies</h2>
+                    <div class="relative">
+                        <input type="text" 
+                               class="search-input"
+                               placeholder="Search for movies..." 
+                               id="movie-search-box">
+                        <div class="search-list absolute w-full mt-2 bg-secondary rounded-lg overflow-hidden shadow-xl z-50" 
+                             id="search-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Favorites Section -->
+            <section class="mt-12">
+                <h2 class="text-2xl font-semibold mb-6">My Favorites</h2>
+                <div id="favorites-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                </div>
+            </section>
+
+            <!-- Search Results -->
+            <div class="mt-12">
+                <div class="result-grid" id="result-grid"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
